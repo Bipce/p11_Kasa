@@ -1,0 +1,25 @@
+@import "/src/assets/styles/utils/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+
+  &__list {
+    font-weight: $font-weight-medium;
+    font-size: $small-font-size;
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &--margin {
+        margin-right: 20px;
+      }
+    }
+  }
+}

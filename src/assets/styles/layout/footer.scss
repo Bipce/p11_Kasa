@@ -1,0 +1,15 @@
+@import "/src/assets/styles/utils/variables.scss";
+
+.footer {
+  background-color: #000;
+  height: 209px;
+  color: #fff;
+  align-content: center;
+  text-align: center;
+
+  &__copyright {
+    width: 30%;
+    margin: auto;
+    font-size: $small-font-size;
+  }
+}
