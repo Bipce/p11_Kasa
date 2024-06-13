@@ -1,0 +1,53 @@
+@import "/src/assets/styles/utils/variables.scss";
+
+.top-section {
+  position: relative;
+  height: 111px;
+  background-color: #000;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+  &__img {
+    background: url("../../images/Img-home-page.png") center center/cover no-repeat;
+    border-radius: 10px;
+    opacity: 60%;
+    height: 111px;
+    width: 100%;
+    position: absolute;
+    border: 1px solid transparent;
+    filter: brightness(0.6) contrast(1.2);
+  }
+
+  &__text {
+    width: 70%;
+    font-weight: $font-weight-secondary;
+    font-size: $large-font-size;
+    color: #fff;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    line-height: 1;
+  }
+}
+
+.lodging-article {
+  margin-bottom: 10px;
+  position: relative;
+
+  &__img {
+    border-radius: 10px;
+    height: 255px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: $medium-font-size;
+    font-weight: $font-weight-secondary;
+  }
+}

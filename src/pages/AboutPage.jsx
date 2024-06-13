@@ -1,11 +1,11 @@
 import React from "react";
 
-const Lodging = () => {
+const AboutPage = () => {
   return (
     <h1>
-      Lodging
+      About
     </h1>
   );
 };
 
-export default Lodging;
+export default AboutPage;
