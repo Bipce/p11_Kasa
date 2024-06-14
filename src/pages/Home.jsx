@@ -7,7 +7,7 @@ import { getAll } from "../services/api-call";
  * @returns {JSX.Element}
  * @constructor
  */
-const HomePage = () => {
+const Home = () => {
   const [lodgings, setLodgings] = useState([]);
 
   useEffect(() => {
@@ -41,4 +41,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

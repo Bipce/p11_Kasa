@@ -1,6 +1,6 @@
 import React from "react";
 
-const LodgingDetailPage = () => {
+const LodgingDetail = () => {
   return (
     <h1>
       Lodging
@@ -8,4 +8,4 @@ const LodgingDetailPage = () => {
   );
 };
 
-export default LodgingDetailPage;
+export default LodgingDetail;
