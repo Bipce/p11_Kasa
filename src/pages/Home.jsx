@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAll } from "../services/api-call";
+import { getLodgings } from "../services/api-call";
+import Lodgings from "../components/Lodgings";
 
 /**
  *
@@ -12,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      setLodgings(await getAll());
+      setLodgings(await getLodgings());
     })();
   }, []);
 
@@ -23,20 +24,7 @@ const Home = () => {
         <p className="top-section__text">Chez vous, partout et ailleurs</p>
       </section>
 
-      <section>
-        {lodgings.map(lodging => {
-          return (
-            <article key={lodging.id} className="lodging-article">
-              <Link to={`lodging/${lodging.id}`}>
-                <figure>
-                  <img src={lodging.cover} alt={lodging.title} className="lodging-article__img" />
-                </figure>
-                <figcaption className="lodging-article__text">{lodging.title}</figcaption>
-              </Link>
-            </article>
-          );
-        })}
-      </section>
+      <Lodgings lodgings={lodgings} />
     </>
   );
 };
