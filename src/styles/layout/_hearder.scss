@@ -1,4 +1,4 @@
-@import "/src/assets/styles/utils/variables.scss";
+@import "/src/styles/utils/variables";
 
 .header {
   display: flex;
@@ -7,7 +7,7 @@
   height: 100px;
 
   &__list {
-    font-weight: $font-weight-primary;
+    font-weight: $font-weight-medium;
     font-size: $small-font-size;
     display: flex;
     justify-content: space-between;

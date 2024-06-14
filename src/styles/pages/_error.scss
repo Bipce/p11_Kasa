@@ -1,0 +1,33 @@
+@import "src/styles/utils/variables";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100vh - 100px - 209px);
+
+  &__title {
+    font-weight: $font-weight-bold;
+    font-size: 96px;
+    color: $tertiary-color;
+  }
+
+  &__text {
+    color: $tertiary-color;
+    font-size: $medium-font-size;
+    font-weight: $font-weight-medium;
+    margin-inline: auto;
+    text-align: center;
+    width: 78%;
+  }
+
+  &__link {
+    font-weight: $font-weight-medium;
+    font-size: 14px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

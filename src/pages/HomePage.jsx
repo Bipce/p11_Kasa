@@ -2,11 +2,18 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAll } from "../services/api-call";
 
+/**
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const HomePage = () => {
   const [lodgings, setLodgings] = useState([]);
 
   useEffect(() => {
-    getAll(setLodgings);
+    (async () => {
+      setLodgings(await getAll());
+    })();
   }, []);
 
   return (

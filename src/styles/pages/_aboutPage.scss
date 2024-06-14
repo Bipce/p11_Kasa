@@ -1,0 +1,14 @@
+
+.about-top {
+  background-color: #6b6b6b;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+  &__img {
+    background: url("../../assets/images/img-about.png") center center/cover no-repeat;
+    border-radius: 10px;
+    height: 111px;
+    opacity: .6;
+    filter: brightness(0.7) contrast(1.5);
+  }
+}

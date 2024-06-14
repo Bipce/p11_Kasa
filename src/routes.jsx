@@ -3,7 +3,7 @@ import Layout from "./pages/Layout";
 import HomePage from "./pages/HomePage";
 import LodgingDetailPage from "./pages/LodgingDetailPage";
 import ErrorPage from "./pages/ErrorPage";
-import AboutPage from "./pages/AboutPage";
+import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "/lodging/:id", element: <LodgingDetailPage /> },
-      { path: "/about", element: <AboutPage /> },
+      { path: "/about", element: <About /> },
     ],
   },
 ]);

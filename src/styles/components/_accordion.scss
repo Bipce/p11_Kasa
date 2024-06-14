@@ -1,0 +1,62 @@
+@import "/src/styles/utils/variables";
+
+.accordion {
+  margin-bottom: 20px;
+
+  &__title {
+    color: $primary-color;
+    background-color: #FF6060;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: $font-weight-bold;
+
+    &__icon {
+      &--open {
+        transition: .3s ease-in-out;
+        transform: rotate(-180deg);
+      }
+
+      &--close {
+        transition: .3s ease-in-out;
+
+      }
+    }
+  }
+
+  &__text {
+    &--open {
+      font-size: $small-font-size;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #F6F6F673;
+      animation: slide-bottom .3s ease-in-out both;
+    }
+
+    &--close {
+      transition: .3s ease-in-out;
+      animation: slide-top .3s ease-in-out both;
+    }
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}

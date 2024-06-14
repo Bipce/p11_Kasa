@@ -1,6 +1,8 @@
-export const getAll = (setLodgings) => {
-  fetch("/data/logements.json")
-    .then(res => res.json())
-    .then(res => setLodgings(res))
-    .catch(err => console.log(err));
+export const getAll = async () => {
+  try {
+    const res = await fetch("data/logements.json");
+    return res.json();
+  } catch (err) {
+    return err;
+  }
 };

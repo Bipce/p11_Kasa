@@ -1,9 +1,9 @@
-@import "/src/assets/styles/utils/variables.scss";
+@import "/src/styles/utils/variables";
 
 .footer {
-  background-color: #000;
+  background-color: $secondary-color;
   height: 209px;
-  color: #fff;
+  color: $primary-color;
   align-content: center;
   text-align: center;
 
