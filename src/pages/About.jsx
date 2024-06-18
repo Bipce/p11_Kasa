@@ -17,7 +17,7 @@ const About = () => {
         <figure className="about-top__img"></figure>
       </section>
 
-      <section>
+      <section className="about__accordion">
         {infos.map(info => <Accordion title={info.title} text={info.text} key={info.title} />)}
       </section>
     </>

@@ -1,6 +1,7 @@
 @import "/src/styles/utils/variables";
+@import "/src/styles/utils/mixin";
 
-.lodging-article {
+.lodging__article {
   margin-bottom: 10px;
   position: relative;
 
@@ -19,5 +20,30 @@
     color: $primary-color;
     font-size: $medium-font-size;
     font-weight: $font-weight-bold;
+  }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------Responsive-------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
+@include large {
+  .lodging {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $quaternary-color;
+    padding: 70px 60px;
+    border-radius: 10px;
+    gap: 60px;
+
+    &__article {
+      margin-bottom: 0;
+
+      &__img {
+        height: 340px;
+        width: 340px;
+      }
+    }
   }
 }

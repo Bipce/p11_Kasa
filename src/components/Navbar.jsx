@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
   return (
-    <header className="header">
-      <h1><img src={logo} alt="logo" /></h1>
+    <header className="navbar">
+      <h1><img src={logo} className="navbar__logo" alt="logo" /></h1>
 
       <nav>
-        <ul className="header__list">
-          <li className="header__list__item header__list__item--margin">
+        <ul className="navbar__list">
+          <li className="navbar__list__item navbar__list__item--margin">
             <Link to="/">ACCUEIL</Link>
           </li>
-          <li className="header__list__item">
+          <li className="navbar__list__item">
             <Link to="/about">A PROPOS</Link>
           </li>
         </ul>

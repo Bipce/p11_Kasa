@@ -1,6 +1,7 @@
 @import "/src/styles/utils/variables";
+@import "/src/styles/utils/mixin";
 
-.header {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +20,30 @@
 
       &--margin {
         margin-right: 20px;
+      }
+    }
+  }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------Responsive-------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
+@include large {
+  .navbar {
+    height: 150px;
+
+    &__logo {
+      width: 210px;
+    }
+
+    &__list {
+      &__item {
+        font-size: $large-font-size;
+
+        &--margin {
+          margin-right: 60px;
+        }
       }
     }
   }

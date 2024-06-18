@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 
 const Lodgings = ({ lodgings }) => {
   return (
-    <section>
+    <section className="lodging">
       {lodgings.map(lodging => {
         return (
-          <article key={lodging.id} className="lodging-article">
+          <article key={lodging.id} className="lodging__article">
             <Link to={`lodging/${lodging.id}`}>
               <figure>
-                <img src={lodging.cover} alt={lodging.title} className="lodging-article__img" />
+                <img src={lodging.cover} alt={lodging.title} className="lodging__article__img" />
               </figure>
-              <figcaption className="lodging-article__text">{lodging.title}</figcaption>
+              <figcaption className="lodging__article__text">{lodging.title}</figcaption>
             </Link>
           </article>
         );

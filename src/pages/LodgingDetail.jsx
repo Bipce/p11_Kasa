@@ -10,25 +10,30 @@ const LodgingDetail = () => {
     <>
       <figure>
         <img src={data.cover} alt={data.title} className="detail__img" />
-        <figcaption>
-          <h2 className="detail__img__title">{data.title}</h2>
-        </figcaption>
       </figure>
-      <p className="detail__location">{data.location}</p>
-      <Tags data={data.tags} />
 
-      <section className="detail__profil">
-        <Stars rating={data.rating} />
-        <div className="detail__profil__user">
-          <h3 className="detail__profil__user__name">{data.host.name}</h3>
-          <figure>
-            <img src={data.host.picture} alt={data.host.name} className="detail__profil__user__img" />
-          </figure>
+      <div className="large-width">
+        <div className="large-width__left">
+          <h2 className="detail__title">{data.title}</h2>
+          <p className="detail__location">{data.location}</p>
+          <Tags data={data.tags} />
         </div>
-      </section>
 
-      <Accordion title="Description" text={data.description} />
-      <Accordion title="Equipement" data={data.equipments} />
+        <section className="detail__profil">
+          <Stars rating={data.rating} />
+          <div className="detail__profil__user">
+            <h3 className="detail__profil__user__name">{data.host.name}</h3>
+            <figure>
+              <img src={data.host.picture} alt={data.host.name} className="detail__profil__user__img" />
+            </figure>
+          </div>
+        </section>
+      </div>
+
+      <section className="detail__accordion">
+        <Accordion title="Description" text={data.description} />
+        <Accordion title="Equipement" data={data.equipments} />
+      </section>
     </>
   );
 };

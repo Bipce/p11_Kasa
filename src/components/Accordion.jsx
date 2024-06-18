@@ -12,7 +12,7 @@ const Accordion = ({ title, text, data }) => {
   return (
     <ul className="accordion">
       <li>
-        <h2 className="accordion__title">
+        <h2 className="accordion__title accordion__title--detail">
           {title}
           <FontAwesomeIcon icon={faChevronUp} size="lg" onClick={reverseIsOpen}
                            className={isOpen

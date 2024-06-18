@@ -1,18 +1,19 @@
-@import "/src/styles/utils/variables.scss";
+@import "/src/styles/utils/variables";
+@import "src/styles/utils/mixin";
 
 .detail {
   &__img {
     height: 255px;
     width: 100%;
     border-radius: 10px;
+  }
 
-    &__title {
-      font-size: $medium-font-size;
-      font-weight: $font-weight-medium;
-      color: $tertiary-color;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
+  &__title {
+    font-size: $medium-font-size;
+    font-weight: $font-weight-medium;
+    color: $tertiary-color;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
 
@@ -46,6 +47,68 @@
         border-radius: 100%;
         width: 32px;
         height: 32px;
+      }
+    }
+  }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------Responsive-------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
+@include large {
+  .large-width {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+    }
+  }
+
+  .detail {
+    &__img {
+      height: 415px;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__location {
+      font-size: $medium-font-size;
+    }
+
+    &__profil {
+      flex-direction: column-reverse;
+      align-items: end;
+      width: 40%;
+
+      &__user {
+        gap: 10px;
+
+        &__name {
+          font-size: $medium-font-size;
+        }
+
+        &__img {
+          border-radius: 100%;
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+
+    &__accordion {
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: space-between;
+
+      .accordion {
+        width: 45%;
       }
     }
   }
