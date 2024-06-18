@@ -9,20 +9,26 @@ const LodgingDetail = () => {
   return (
     <>
       <figure>
-        <img src={data.cover} alt={data.title} />
+        <img src={data.cover} alt={data.title} className="detail__img" />
+        <figcaption>
+          <h2 className="detail__img__title">{data.title}</h2>
+        </figcaption>
       </figure>
-      <h2>{data.title}</h2>
-      <p>{data.location}</p>
+      <p className="detail__location">{data.location}</p>
       <Tags data={data.tags} />
-      <Stars rating={data.rating} />
-      <div>
-        <h3>{data.host.name}</h3>
-        <figure>
-          <img src={data.host.picture} alt={data.host.name} />
-        </figure>
-      </div>
+
+      <section className="detail__profil">
+        <Stars rating={data.rating} />
+        <div className="detail__profil__user">
+          <h3 className="detail__profil__user__name">{data.host.name}</h3>
+          <figure>
+            <img src={data.host.picture} alt={data.host.name} className="detail__profil__user__img" />
+          </figure>
+        </div>
+      </section>
+
       <Accordion title="Description" text={data.description} />
-      <Accordion title="Equipement" text={data.equipments} />
+      <Accordion title="Equipement" data={data.equipments} />
     </>
   );
 };

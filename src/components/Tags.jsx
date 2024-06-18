@@ -1,7 +1,7 @@
 const Tags = ({ data }) => {
   return (
-    <ul>
-      {data.map(tag => <li key={tag}>{tag}</li>)}
+    <ul className="tags">
+      {data.map(tag => <li key={tag} className="tags__item">{tag}</li>)}
     </ul>
   );
 };

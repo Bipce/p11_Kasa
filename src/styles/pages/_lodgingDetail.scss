@@ -1,0 +1,52 @@
+@import "/src/styles/utils/variables.scss";
+
+.detail {
+  &__img {
+    height: 255px;
+    width: 100%;
+    border-radius: 10px;
+
+    &__title {
+      font-size: $medium-font-size;
+      font-weight: $font-weight-medium;
+      color: $tertiary-color;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+
+  &__location {
+    font-weight: $font-weight-medium;
+    font-size: 14px;
+  }
+
+  &__profil {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    &__user {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      gap: 5px;
+
+      &__name {
+        font-size: $small-font-size;
+        font-weight: $font-weight-medium;
+        color: $tertiary-color;
+        width: 60%;
+        text-align: right;
+      }
+
+      &__img {
+        border-radius: 100%;
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}

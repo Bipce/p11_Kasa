@@ -1,9 +1,14 @@
 @import "src/styles/utils/variables";
 
-.rating-up {
-  color: $tertiary-color;
-}
+.stars {
+  display: flex;
+  gap: 5px;
 
-.rating-down {
-  color: grey;
+  &__rating-up {
+    color: $tertiary-color;
+  }
+
+  &__rating-down {
+    color: grey;
+  }
 }
