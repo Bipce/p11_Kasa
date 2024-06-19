@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -11,10 +11,10 @@ const Navbar = () => {
       <nav>
         <ul className="navbar__list">
           <li className="navbar__list__item navbar__list__item--margin">
-            <Link to="/">ACCUEIL</Link>
+            <NavLink to="/">ACCUEIL</NavLink>
           </li>
           <li className="navbar__list__item">
-            <Link to="/about">A PROPOS</Link>
+            <NavLink to="/about">A PROPOS</NavLink>
           </li>
         </ul>
       </nav>

@@ -16,7 +16,9 @@
     font-weight: $font-weight-bold;
 
 
-    &__icon {
+    &__icon {;
+      cursor: pointer;
+
       &--open {
         transition: .3s ease-in-out;
         transform: rotate(-180deg);

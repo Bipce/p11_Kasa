@@ -11,9 +11,14 @@
   justify-content: space-between;
 }
 
+:root {
+  font-size: 62.5%;
+}
+
 body {
   font-size: 62.5%;
   min-width: 325px;
+  font-size-adjust: 0.4;
 }
 
 img {

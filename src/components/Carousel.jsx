@@ -5,18 +5,19 @@ import { useState } from "react";
 const Carousel = ({ data, title }) => {
   const [currentIndexImg, setCurrentIndexImg] = useState(0);
 
-  const previousImg = () => {
-    setCurrentIndexImg(prev => prev - 1);
-    if (currentIndexImg === 0) {
-      setCurrentIndexImg(data.length - 1);
-    }
-  };
+  const updateImg = (delta) => {
+    setCurrentIndexImg(prev => {
+      const value = prev + delta;
 
-  const nextImg = () => {
-    setCurrentIndexImg(prev => prev + 1);
-    if (currentIndexImg === data.length - 1) {
-      setCurrentIndexImg(0);
-    }
+      if (value < 0) {
+        return data.length - 1;
+      }
+
+      if (value === data.length) {
+        return 0;
+      }
+      return value;
+    });
   };
 
   return (
@@ -25,9 +26,9 @@ const Carousel = ({ data, title }) => {
         <img src={data[currentIndexImg]} alt={title} className="carousel__img" />
         {data.length > 1 && (
           <>
-            <FontAwesomeIcon icon={faChevronLeft} onClick={previousImg}
+            <FontAwesomeIcon icon={faChevronLeft} onClick={() => updateImg(-1)}
                              className="carousel__content carousel__arrow carousel__arrow--left" />
-            <FontAwesomeIcon icon={faChevronRight} onClick={nextImg}
+            <FontAwesomeIcon icon={faChevronRight} onClick={() => updateImg(1)}
                              className="carousel__content carousel__arrow carousel__arrow--right" />
             <p className="carousel__content carousel__nbr">{currentIndexImg + 1} / {data.length}</p>
           </>
