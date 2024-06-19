@@ -7,8 +7,8 @@ const Stars = ({ rating }) => {
 
   return (
     <div className="stars">
-      {coloredStarsArr.map(r => <FontAwesomeIcon key={r} icon={faStar} className="stars__rating-up" />)}
-      {greyStarsArr.map(r => <FontAwesomeIcon key={r} icon={faStar} className="stars__rating-down" />)}
+      {coloredStarsArr.map(r => <FontAwesomeIcon key={r} icon={faStar} className="stars__icon stars__rating-up" />)}
+      {greyStarsArr.map(r => <FontAwesomeIcon key={r} icon={faStar} className="stars__icon stars__rating-down" />)}
     </div>
   );
 };

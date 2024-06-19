@@ -2,12 +2,6 @@
 @import "src/styles/utils/mixin";
 
 .detail {
-  &__img {
-    height: 255px;
-    width: 100%;
-    border-radius: 10px;
-  }
-
   &__title {
     font-size: $medium-font-size;
     font-weight: $font-weight-medium;
@@ -70,10 +64,6 @@
   }
 
   .detail {
-    &__img {
-      height: 415px;
-    }
-
     &__title {
       font-size: 36px;
     }

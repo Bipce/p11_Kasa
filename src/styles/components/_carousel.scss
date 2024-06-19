@@ -1,0 +1,61 @@
+@import "src/styles/utils/variables";
+@import "src/styles/utils/mixin";
+
+.carousel {
+  position: relative;
+
+  &__img {
+    height: 255px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  &__content {
+    position: absolute;
+    color: $primary-color;
+  }
+
+  &__arrow {
+    width: 11.67px;
+    height: 19.8px;
+    top: 50%;
+
+
+    &--left {
+      left: 2%;
+    }
+
+    &--right {
+      right: 2%;
+    }
+  }
+
+  &__nbr {
+    bottom: 5%;
+    font-size: $small-font-size;
+    font-weight: $font-weight-medium;
+    right: 50%;
+  }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------Responsive-------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
+@include large {
+  .carousel {
+    &__img {
+      height: 415px;
+    }
+
+    &__arrow {
+      width: 46.68px;
+      height: 79.2px;
+      top: 40%;
+    }
+
+    &__nbr {
+      font-size: $medium-font-size;
+    }
+  }
+}

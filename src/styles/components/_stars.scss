@@ -5,6 +5,11 @@
   display: flex;
   gap: 5px;
 
+  &__icon {
+    width: 13.41px;
+    height: 13px;
+  }
+
   &__rating-up {
     color: $tertiary-color;
   }
@@ -20,7 +25,7 @@
 
 @include large {
   .stars {
-    &__rating-up, &__rating-down {
+    &__icon {
       width: 24.75px;
       height: 24px;
     }

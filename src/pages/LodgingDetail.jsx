@@ -2,17 +2,16 @@ import { useRouteLoaderData } from "react-router-dom";
 import Tags from "../components/Tags";
 import Stars from "../components/Stars";
 import Accordion from "../components/Accordion";
+import Carousel from "../components/Carousel";
 
 const LodgingDetail = () => {
   const data = useRouteLoaderData("lodging");
 
   return (
     <>
-      <figure>
-        <img src={data.cover} alt={data.title} className="detail__img" />
-      </figure>
+      <Carousel data={data.pictures} title={data.title} />
 
-      <div className="large-width">
+      <section className="large-width">
         <div className="large-width__left">
           <h2 className="detail__title">{data.title}</h2>
           <p className="detail__location">{data.location}</p>
@@ -28,7 +27,7 @@ const LodgingDetail = () => {
             </figure>
           </div>
         </section>
-      </div>
+      </section>
 
       <section className="detail__accordion">
         <Accordion title="Description" text={data.description} />

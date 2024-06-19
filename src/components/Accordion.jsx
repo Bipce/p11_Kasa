@@ -20,10 +20,16 @@ const Accordion = ({ title, text, data }) => {
                              : "accordion__title__icon accordion__title__icon--close"} />
         </h2>
         {isOpen && (
-          <p className={isOpen ? "accordion__text--open" : "accordion__text--close"}>
+          <div className={isOpen ? "accordion__text--open" : "accordion__text--close"}>
             {text && text}
-            {data && data.map(equipment => <p>{equipment}</p>)}
-          </p>
+            {data && data.map(equipment => {
+              return (
+                <ul key={equipment}>
+                  <li>{equipment}</li>
+                </ul>
+              );
+            })}
+          </div>
         )}
       </li>
     </ul>
