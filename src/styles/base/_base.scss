@@ -4,6 +4,17 @@
   padding-inline: 20px;
 }
 
+.main-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body {
+  font-size: 62.5%;
+}
+
 img {
   object-fit: cover;
 }
