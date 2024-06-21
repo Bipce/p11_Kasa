@@ -2,11 +2,6 @@ import { useEffect, useState } from "react";
 import { getLodgings } from "../services/api-call";
 import Lodgings from "../components/Lodgings";
 
-/**
- *
- * @returns {JSX.Element}
- * @constructor
- */
 const Home = () => {
   const [lodgings, setLodgings] = useState([]);
 
@@ -15,6 +10,7 @@ const Home = () => {
       setLodgings(await getLodgings());
     })();
   }, []);
+
 
   return (
     <>

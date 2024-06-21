@@ -1,12 +1,8 @@
 const LODGINGS_URL = "/data/logements.json";
 
 export const getLodgings = async () => {
-  try {
-    const res = await fetch(LODGINGS_URL);
-    return await res.json();
-  } catch (err) {
-    return err;
-  }
+  const res = await fetch(LODGINGS_URL);
+  return res.json();
 };
 
 export const getLodging = async (id) => {

@@ -21,7 +21,7 @@ const Accordion = ({ title, text, data }) => {
         </h2>
         {isOpen && (
           <div className={isOpen ? "accordion__text--open" : "accordion__text--close"}>
-            {text && text}
+            {text && <p>{text}</p>}
             {data && data.map(equipment => {
               return (
                 <ul key={equipment}>
