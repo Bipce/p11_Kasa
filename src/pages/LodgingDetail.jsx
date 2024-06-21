@@ -1,38 +1,56 @@
-import { useRouteLoaderData } from "react-router-dom";
 import Tags from "../components/Tags";
 import Stars from "../components/Stars";
 import Accordion from "../components/Accordion";
 import Carousel from "../components/Carousel";
+import Error from "./Error";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getLodging } from "../services/api-call";
 
 const LodgingDetail = () => {
-  const data = useRouteLoaderData("lodging");
+  const { id } = useParams();
+  const [lodging, setLodging] = useState(undefined);
+
+  useEffect(() => {
+    (async () => {
+      setLodging(await getLodging(id));
+    })();
+  }, [id]);
+
+  if (!lodging) {
+    return <Error />;
+  }
 
   return (
     <>
-      <Carousel data={data.pictures} title={data.title} />
+      {lodging && (
+        <>
+          <Carousel data={lodging.pictures} title={lodging.title} />
 
-      <section className="large-width">
-        <div className="large-width__left">
-          <h2 className="detail__title">{data.title}</h2>
-          <p className="detail__location">{data.location}</p>
-          <Tags data={data.tags} />
-        </div>
+          <section className="large-width">
+            <div className="large-width__left">
+              <h2 className="detail__title">{lodging.title}</h2>
+              <p className="detail__location">{lodging.location}</p>
+              <Tags data={lodging.tags} />
+            </div>
 
-        <section className="detail__profil">
-          <Stars rating={data.rating} />
-          <div className="detail__profil__user">
-            <h3 className="detail__profil__user__name">{data.host.name}</h3>
-            <figure>
-              <img src={data.host.picture} alt={data.host.name} className="detail__profil__user__img" />
-            </figure>
-          </div>
-        </section>
-      </section>
+            <section className="detail__profil">
+              <Stars rating={lodging.rating} />
+              <div className="detail__profil__user">
+                <h3 className="detail__profil__user__name">{lodging.host.name}</h3>
+                <figure>
+                  <img src={lodging.host.picture} alt={lodging.host.name} className="detail__profil__user__img" />
+                </figure>
+              </div>
+            </section>
+          </section>
 
-      <section className="detail__accordion">
-        <Accordion title="Description" text={data.description} />
-        <Accordion title="Equipement" data={data.equipments} />
-      </section>
+          <section className="detail__accordion">
+            <Accordion title="Description" text={lodging.description} />
+            <Accordion title="Equipement" data={lodging.equipments} />
+          </section>
+        </>
+      )}
     </>
   );
 };
