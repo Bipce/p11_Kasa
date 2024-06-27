@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
-import Accordion from "../components/Accordion";
+import { useEffect, useState } from "react";
 import { getAboutInfos } from "../services/getAboutInfos";
+import Accordion from "../components/Accordion";
 
 const About = () => {
-  const [infos, setInfos] = useState([]);
+  const [infos, setInfos] = useState(undefined);
 
   useEffect(() => {
     (async () => {
       setInfos(await getAboutInfos());
     })();
   }, []);
+
+  if (!infos) return null;
 
   return (
     <>

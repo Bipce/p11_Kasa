@@ -38,9 +38,9 @@
     }
 
     &__list {
-      &__item {
-        font-size: $large-font-size;
+      font-size: $large-font-size;
 
+      &__item {
         &--margin {
           margin-right: 60px;
         }

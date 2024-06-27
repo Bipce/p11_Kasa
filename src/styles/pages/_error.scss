@@ -10,7 +10,7 @@
 
   &__title {
     font-weight: $font-weight-bold;
-    font-size: 96px;
+    font-size: 6rem;
     color: $tertiary-color;
   }
 
@@ -25,7 +25,7 @@
 
   &__link {
     font-weight: $font-weight-medium;
-    font-size: 14px;
+    font-size: .875rem;
 
     &:hover {
       text-decoration: underline;
@@ -40,11 +40,12 @@
 @include large {
   .section {
     &__title {
-      font-size: 288px;
+      font-size: 18rem;
     }
 
     &__text {
-      font-size: 36px;
+      font-size: 2.25rem;
+      width: 100%;
     }
 
     &__link {

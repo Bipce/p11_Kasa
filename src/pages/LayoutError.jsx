@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Error from "./Error";
 
-const Layout = () => {
+const LayoutError = () => {
   return (
     <div className="main-wrapper">
       <div className="container">
@@ -14,4 +14,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default LayoutError;
