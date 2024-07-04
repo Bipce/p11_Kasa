@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const Carousel = ({ data, title }) => {
@@ -26,10 +24,10 @@ const Carousel = ({ data, title }) => {
         <img src={data[currentIndexImg]} alt={title} className="carousel__img" />
         {data.length > 1 && (
           <>
-            <FontAwesomeIcon icon={faChevronLeft} onClick={() => updateImg(-1)}
-                             className="carousel__content carousel__arrow carousel__arrow--left" />
-            <FontAwesomeIcon icon={faChevronRight} onClick={() => updateImg(1)}
-                             className="carousel__content carousel__arrow carousel__arrow--right" />
+            <i className="fa-solid fa-chevron-left carousel__content carousel__arrow carousel__arrow--left"
+               onClick={() => updateImg(-1)}></i>
+            <i className="fa-solid fa-chevron-right carousel__content carousel__arrow carousel__arrow--right"
+               onClick={() => updateImg(1)}></i>
             <p className="carousel__content carousel__nbr">{currentIndexImg + 1} / {data.length}</p>
           </>
         )}

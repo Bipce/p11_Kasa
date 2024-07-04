@@ -18,6 +18,8 @@
 
     &__icon {;
       cursor: pointer;
+      width: 16px;
+      height: 9px;
 
       &--open {
         transition: .3s ease-in-out;
@@ -26,7 +28,6 @@
 
       &--close {
         transition: .3s ease-in-out;
-
       }
     }
   }
@@ -43,6 +44,9 @@
     &--close {
       transition: .3s ease-in-out;
       animation: slide-top .3s ease-in-out both;
+      visibility: collapse;
+      height: 0;
+      font-size: 0;
     }
   }
 }
@@ -74,7 +78,12 @@
     &__title {
       font-size: $large-font-size;
 
-      &--detail {
+      &__icon {
+        width: 22px;
+        height: 13px;
+      }
+
+      &--fontSize {
         font-size: $medium-font-size;
       }
     }

@@ -50,9 +50,12 @@
     }
 
     &__arrow {
-      width: 46.68px;
-      height: 79.2px;
+      font-size: 72px;
       top: 40%;
+
+      &--right {
+        right: 5%;
+      }
     }
 
     &__nbr {

@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const Accordion = ({ title, text, data }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,25 +10,23 @@ const Accordion = ({ title, text, data }) => {
   return (
     <ul className="accordion">
       <li>
-        <h2 className="accordion__title accordion__title--detail">
+        <h2 className="accordion__title accordion__title--fontSize">
           {title}
-          <FontAwesomeIcon icon={faChevronUp} size="lg" onClick={reverseIsOpen}
-                           className={isOpen
-                             ? "accordion__title__icon accordion__title__icon--open"
-                             : "accordion__title__icon accordion__title__icon--close"} />
+          <i className={`fa-solid fa-chevron-up ${isOpen
+            ? "accordion__title__icon accordion__title__icon--open"
+            : "accordion__title__icon accordion__title__icon--close"}`}
+             onClick={reverseIsOpen}></i>
         </h2>
-        {isOpen && (
-          <div className={isOpen ? "accordion__text--open" : "accordion__text--close"}>
-            {text && <p>{text}</p>}
-            {data && data.map(equipment => {
-              return (
-                <ul key={equipment}>
-                  <li>{equipment}</li>
-                </ul>
-              );
-            })}
-          </div>
-        )}
+        <div className={isOpen ? "accordion__text--open" : "accordion__text--close"}>
+          {text && <p>{text}</p>}
+          {data && data.map(equipment => {
+            return (
+              <ul key={equipment}>
+                <li>{equipment}</li>
+              </ul>
+            );
+          })}
+        </div>
       </li>
     </ul>
   );
